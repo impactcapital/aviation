@@ -67,10 +67,22 @@ geo-full = [
     "gdal>=3.8",
     "pdal>=3.4",
 ]
+spatial = [
+    # Cesium ion REST client
+    "httpx>=0.27",
+    # STAC catalog generation
+    "pystac>=1.10",
+    # GeoParquet entity export
+    "pyarrow>=16",
+    "geopandas>=0.14",
+]
 
 [project.scripts]
 aquadome-ingest = "aquadome.scripts.ingest_flight:main"
 aquadome-seed-gis = "aquadome.scripts.seed_gis_layers:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aquadome"]
